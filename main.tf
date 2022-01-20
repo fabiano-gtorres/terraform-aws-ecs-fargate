@@ -384,12 +384,12 @@ resource "aws_ecs_service" "this" {
   }
 
   dynamic "capacity_provider_strategy" {
-    for_each = var.capacity_provider_strategy != null ? [1] : []
+    for_each = var.capacity_provider_strategy
 
     content {
-      capacity_provider = var.capacity_provider_strategy.capacity_provider
-      weight            = var.capacity_provider_strategy.weight
-      base              = var.capacity_provider_strategy.base
+      capacity_provider = capacity_provider_strategy.value.capacity_provider
+      weight            = lookup(capacity_provider_strategy.value, "weight", null)
+      base              = lookup(capacity_provider_strategy.value, "base", null)
     }
   }
 

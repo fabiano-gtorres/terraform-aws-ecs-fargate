@@ -155,7 +155,7 @@ variable "lb_path_pattern" {
 }
 
 variable "capacity_provider_strategy" {
-  type        = map(any)
+  type        = list(any)
   default     = null
   description = "The capacity provider strategy to use for the service."
 }
