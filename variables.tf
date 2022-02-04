@@ -237,3 +237,9 @@ variable "container_definitions" {
   default     = null
   description = "External ECS container definitions"
 }
+
+variable "deployment_controller" {
+  type        = string
+  default     = "ECS"
+  description = "Type of deployment controller. Valid values: CODE_DEPLOY, ECS, EXTERNAL"
+}

@@ -365,6 +365,10 @@ resource "aws_ecs_service" "this" {
     assign_public_ip = var.assign_public_ip
   }
 
+  deployment_controller {
+    type = var.deployment_controller
+  }
+
   dynamic "load_balancer" {
     for_each = var.load_balancer == true ? [1] : []
 
