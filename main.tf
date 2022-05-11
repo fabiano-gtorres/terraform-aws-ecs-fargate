@@ -39,7 +39,7 @@ data "aws_vpc" "this" {
 data "aws_subnet_ids" "public" {
   vpc_id = data.aws_vpc.this.id
   filter {
-    name   = "vpc-id"
+    name   = "subnet-id"
     values = var.subnet_id
   }
 }
