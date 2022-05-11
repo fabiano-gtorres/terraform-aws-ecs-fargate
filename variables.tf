@@ -47,7 +47,7 @@ variable "vpc_name" {
   description = "The VPC name where the task will be performed."
 }
 
-variable "subnet_name" {
+variable "subnet_id" {
   type        = list(any)
   description = "List of one or more subnet names where the task will be performed."
 }
